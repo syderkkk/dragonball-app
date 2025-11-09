@@ -1,42 +1,190 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para las tarjetas de personajes */
+.character-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: visible;
+  transition: box-shadow 0.3s ease, z-index 0s 0s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.character-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.character-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 16px 0 0;
+}
+
+.character-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
+  transform-origin: center center;
+}
+
+.character-card:hover .character-card-image {
+  transform: scale(1.15);
+}
+
+.character-card-content {
+  padding: 1.5rem;
+  background: #ffffff;
+  position: relative;
+  z-index: 1;
+  border-radius: 0 0 16px 16px;
+}
+
+.character-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.character-race {
+  font-size: 1rem;
+  color: #ffc107;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.character-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1rem;
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 .card {
-  padding: 2em;
+  height: 100%;
+  overflow: hidden;
 }
 
-.read-the-docs {
-  color: #888;
+.card-img-top {
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.page-link {
+  color: #ffc107;
+}
+
+.page-item.active .page-link {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+  font-weight: 500;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+  color: #000;
+}
+
+.btn-outline-warning {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+
+  .character-card-image-wrapper {
+    height: 350px;
+  }
+
+  .character-name {
+    font-size: 1.5rem;
+  }
+
+  .card-img-top {
+    height: 300px;
+  }
 }
